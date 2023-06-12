@@ -1,0 +1,28 @@
+/*body {
+    background: linear-gradient(180deg, rgba(251, 251, 251, 0), rgba(19, 74, 137, 0.5));;
+}*/
+
+.well {
+    background: rgba(77, 149, 207, 0.2);
+    color:rgb(19, 14, 60);
+    /*border: 5px solid rgb(41, 41, 78);*/
+}
+
+.nav {
+    background: rgba(77, 149, 207, 0.2);
+    /*border: 5px solid rgb(41, 41, 78);*/
+    color:rgb(41, 41, 78);
+}
+
+button {
+    border: 3px solid whitesmoke;
+    background: rgb(41, 41, 78);
+    color: aliceblue;
+    padding: .5em;
+}
+
+/*img {
+    border-radius: 10%;
+    border: 5px solid rgb(41, 41, 78);
+}*/
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Monte Piadoso</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% load bootstrap5 %} 
+    {% bootstrap_css %} 
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="../../static/montepiadoso/style.css" type="text/css" />
+    <style>
+      /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+      .row.content {
+        height: 550px;
+      }
+
+      /* Set gray background color and 100% height */
+      .sidenav {
+        background-color: #ffffff;
+        height: 100%;
+      }
+
+      /* On small screens, set height to 'auto' for the grid */
+      @media screen and (max-width: 767px) {
+        .row.content {
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav navbar-collapse justify-content-end">
+        <a class="nav-link active" href="#">Salir</a>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row content">
+        <div class="col-sm-3 sidenav hidden-xs">
+          <a href="{% url 'home' %}"><img
+            src="../../static/montepiadoso/Monte Piadoso.png"
+            alt="Monte Piadoso"
+            class="img-fluid"
+          /></a>
+          <h2>Administrador</h2>
+          <ul class="nav nav-pills flex-column">
+            <li class="nav-item"><a class="nav-link active" href="{% url 'home' %}">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'clientelist' %}">Usuarios</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'clientecreate'%}">Crea cliente nuevo</a></li>
+            <button class="button">Descargar Excel</button>
+          </ul>
+          <br />
+        </div>
+        <br />
+        <div class="col-sm-9">
+            {% block content %} {% endblock %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

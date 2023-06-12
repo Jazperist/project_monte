@@ -1,0 +1,19 @@
+{% extends "montepiadoso/base.html" %} 
+{% load bootstrap5 %} 
+{% bootstrap_css %}
+{% bootstrap_javascript %} 
+
+{% block content %}
+<div class="row">
+  <h2>Cliente nuevo</h2>
+  <div class="col-sm-9 justify-content-center">
+    <form action="" method="POST">
+      {% bootstrap_form form %} 
+      {% csrf_token %}
+      <input type="submit" />
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
