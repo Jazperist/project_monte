@@ -1,6 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.auth import authenticate, login, logout
+from django.urls import reverse_lazy
+from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpResponse
 from .forms import ClienteCreateForm
 from .models import Cliente
 from .serializers import ClienteSerializer
@@ -42,6 +46,30 @@ class ClienteDelete(DeleteView):
   success_url = "/cliente/list"
 
 """
+
+def login_view(request):
+    context = {
+        "login_view": "active"
+    }
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect("/api/clientes/")
+        else:
+            return HttpResponse("invalid credentials")
+    return render(request, "registration/login.html", context)
+
+def logout_view(request):
+    logout(request)
+    return redirect("login")
+
+class SignUp(CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy("login")
+    template_name = "registration/signup.html"
 
 @api_view(['GET', 'POST'])
 def clientes_list(request):
