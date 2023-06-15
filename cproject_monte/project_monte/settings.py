@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'montepiadoso.apps.MontepiadosoConfig',
     'bootstrap5',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
