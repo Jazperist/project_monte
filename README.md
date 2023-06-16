@@ -2,7 +2,10 @@
 
 Aplicación hecha en Django
 
-Se debe instalar Boostrap 5 dentro del virtual environment con: pip install django-bootstrap-v5
+Se deben instalar en el entorno virtual: 
+pip install django-bootstrap-v5
+pip install djangorestframework
+pip install django-cors-headers
 
 ![Captura de pantalla 2023-06-12 a la(s) 17 04 30](https://github.com/Jazperist/project_monte/assets/39943709/35228c66-dc13-46f8-8c51-7ce3305bd0bd)
 
