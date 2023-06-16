@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
@@ -23,29 +24,29 @@ class ClienteList(generics.ListCreateAPIView):
   queryset = Cliente.objects.all()
   serializer_class = ClienteSerializer
   template_name = "montepiadoso/cliente_create_form.html"
+"""
 
+class ClienteList(LoginRequiredMixin, ListView):
+   model = Cliente
+   template_name = "montepiadoso/cliente_list.html"
 
-#class ClienteList(ListView):
-#   model = Cliente
-#   template_name = "montepiadoso/cliente_list.html"
+class ClienteCreate(CreateView):
+  model = Cliente
+  template_name = "montepiadoso/cliente_create_form.html"
+  form_class = ClienteCreateForm
 
-#class ClienteCreate(CreateView):
-#  model = Cliente
-#  template_name = "montepiadoso/cliente_create_form.html"
-#  form_class = ClienteCreateForm
-
-class ClienteUpdate(UpdateView):
+class ClienteUpdate(LoginRequiredMixin, UpdateView):
   model = Cliente
   template_name = "montepiadoso/cliente_update_form.html"
   fields = ["nombre", "apellido", "telefono", "email", "cantidad_pedida", "plazo"]
   success_url = "/cliente/list"
 
-class ClienteDelete(DeleteView):
+class ClienteDelete(LoginRequiredMixin, DeleteView):
   model = Cliente
   template_name = "montepiadoso/cliente_delete_form.html"
   success_url = "/cliente/list"
 
-"""
+
 
 def login_view(request):
     context = {
@@ -57,7 +58,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect("/api/clientes/")
+            return redirect("clientelist")
         else:
             return HttpResponse("invalid credentials")
     return render(request, "registration/login.html", context)

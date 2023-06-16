@@ -30,22 +30,23 @@
   </head>
   <body>
     <nav class="nav navbar-collapse justify-content-end">
-        <a class="nav-link active" href="#">Salir</a>
+        <a class="nav-link" href="{% url 'login' %}">Login</a>
+        <a class="nav-link active" href="{% url 'logout' %}">Salir</a>
     </nav>
 
     <div class="container-fluid">
       <div class="row content">
         <div class="col-sm-3 sidenav hidden-xs">
-          <a href="{% url 'home' %}"><img
+          <a href="#"><img
             src="../../static/montepiadoso/Monte Piadoso.png"
             alt="Monte Piadoso"
             class="img-fluid"
           /></a>
           <h2>Administrador</h2>
           <ul class="nav nav-pills flex-column">
-            <li class="nav-item"><a class="nav-link active" href="{% url 'home' %}">Dashboard</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Usuarios</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'clientecreate'%}">Crea cliente nuevo</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'clientelist' %}">Usuarios</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'clientecreate' %}">Crea cliente nuevo</a></li>
             <button class="button">Descargar Excel</button>
           </ul>
           <br />
