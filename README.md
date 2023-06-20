@@ -21,7 +21,7 @@ El código de react esta en la carpeta `project_monte/cproject_monte/monte_piado
 
 Se debe tener instalado node.js
 
-Para ver la app se sugiere abir un servidor con `serve`. Para instalarlo solo hay que teclear en la terminal 
+Para ver la app se sugiere abir un servidor con `serve`. Para instalarlo solo hay entrar en la carpeta `cd monte_piadoso_front` y teclear en la terminal 
 >npm install -g serve
 
 >serve -s build
