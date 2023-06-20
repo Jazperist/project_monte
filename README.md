@@ -1,11 +1,33 @@
 # Monte Piadoso
+Este proyecto Rest CRUD se divide en dos aplicaciones, una en Django y otra en React.
 
-Aplicación hecha en Django
+### Aplicación hecha en Django
 
-Se deben instalar en el entorno virtual: 
-pip install django-bootstrap-v5
-djangorestframework
-django-cors-headers
+En la carpeta del proyecto se debe instalar un entorno virtual con `python3 --m venv nombre_del_environment`
+
+Luego se deben instalar las siguientes dependencias en el entorno virtual: 
+
+`pip3 install django django-bootstrap-v5 djangorestframework django-cors-headers`
+
+Después, en la carpeta del cproject_monte, donde esta el archivo **manage.py**, abrir un servidor con `python3 manage.py runserver`
+
+Y el servidor se cargará en el puerto **localhost:8000**
+
+### Aplicación hecha en React
+
+Esta app hará llamadas hacia la API hecha en Django, por lo que primero se deberá abrir el servidor de Django.
+
+El código de react esta en la carpeta `project_monte/cproject_monte/monte_piadoso_front`
+
+Se debe tener instalado node.js
+
+Para ver la app se sugiere abir un servidor con `serve`. Para instalarlo solo hay que teclear en la terminal 
+>npm install -g serve
+>serve -s build
+
+Esto abrirá un servidor en el puerto **localhost:3000** y se podrá interactuar con la API de Django
+
+### Imagenes de la App de Django
 
 ![Captura de pantalla 2023-06-12 a la(s) 17 04 30](https://github.com/Jazperist/project_monte/assets/39943709/35228c66-dc13-46f8-8c51-7ce3305bd0bd)
 
