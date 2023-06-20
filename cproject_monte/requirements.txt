@@ -1,0 +1,7 @@
+Se debe iniciar un entorno virtual con pyhthon3 -m venv project_env
+
+Luego se activa con source project_env/bin/activate
+
+Para despues instalar las siguientes dependencias:
+
+pip3 install django djangorestframework django_cors_headers django-bootstrap-v5
