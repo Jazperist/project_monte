@@ -5,6 +5,8 @@ Este proyecto Rest CRUD se divide en dos aplicaciones, una en Django y otra en R
 
 En la carpeta del proyecto se debe instalar un entorno virtual con `python3 -m venv nombre_del_environment`
 
+Y posteriormente activarlo con `source nombre_del_environment/bin/activate` . Cuando se activa la línea de la terminal va a comenzar on el nombre del projecto entre paréntesis.
+
 Luego se deben instalar las siguientes dependencias en el entorno virtual: 
 
 `pip3 install django django-bootstrap-v5 djangorestframework django-cors-headers`
