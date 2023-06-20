@@ -3,7 +3,7 @@ Este proyecto Rest CRUD se divide en dos aplicaciones, una en Django y otra en R
 
 ### Aplicación hecha en Django
 
-En la carpeta del proyecto se debe instalar un entorno virtual con `python3 --m venv nombre_del_environment`
+En la carpeta del proyecto se debe instalar un entorno virtual con `python3 -m venv nombre_del_environment`
 
 Luego se deben instalar las siguientes dependencias en el entorno virtual: 
 
@@ -23,6 +23,7 @@ Se debe tener instalado node.js
 
 Para ver la app se sugiere abir un servidor con `serve`. Para instalarlo solo hay que teclear en la terminal 
 >npm install -g serve
+
 >serve -s build
 
 Esto abrirá un servidor en el puerto **localhost:3000** y se podrá interactuar con la API de Django
